@@ -18,4 +18,5 @@ struct node
     cin >> newnode -> name;
 
     // insert the new code in the list
+    // kondisi jika star == null atau noMhs node baru <= no Mhs start
  }
