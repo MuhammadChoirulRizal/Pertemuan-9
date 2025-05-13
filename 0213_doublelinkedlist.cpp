@@ -19,4 +19,10 @@ struct node
 
     // insert the new code in the list
     // kondisi jika star == null atau noMhs node baru <= no Mhs start
+    if (start == NULL || newnode ->noMhs <= start ->noMhs)
+    {
+        // step 2 insert  the new node at the beginning 
+        // kondisi jika star tidak kosong dan noMhs node baru sama dengan noMhs
+        if (start != NULL && newnode -> noMhs == start ->noMhs)
+    }
  }
