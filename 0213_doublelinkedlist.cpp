@@ -43,6 +43,8 @@ struct node
               previous = current; 
               current = current -> next; 
             }
+            newnode -> next = current;
+            newnode -> prev= previous;
         }
     }
  }
