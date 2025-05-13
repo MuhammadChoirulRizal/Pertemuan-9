@@ -45,6 +45,10 @@ struct node
             }
             newnode -> next = current;
             newnode -> prev= previous;
+
+            if (current != NULL){
+                current -> prev = newnode;
+            }
         }
     }
  }
