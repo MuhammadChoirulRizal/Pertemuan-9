@@ -56,12 +56,10 @@ void addNode()
             {
                 start = newnode;
             }
-            
-            
         }
     }
 }
-bool search(int rollNo, node** previous, node** current)
+bool search(int rollNo, node **previous, node **current)
 {
     *previous = NULL;
     *current = start;
@@ -74,7 +72,7 @@ bool search(int rollNo, node** previous, node** current)
 }
 void deleteNode()
 {
-    node* previous, * current;
+    node *previous, *current;
     int rollNo;
 
     cout << "\nEnter the roll number of the student whose record is to be deleted: ";
@@ -86,7 +84,7 @@ void deleteNode()
         return;
     }
     current = start;
-    previous = NULL;  
+    previous = NULL;
     while (current != NULL && current->noMhs != rollNo)
     {
         previous = current;
@@ -99,7 +97,7 @@ void deleteNode()
     }
     if (current == start)
     {
-        start= start->next;
+        start = start->next;
         if (start != NULL)
         {
             start->prev = NULL;
@@ -121,89 +119,83 @@ bool listEmpty()
 {
     return (start == NULL);
 }
-
-    void revtraverse()
-	{
-		if (listEmpty())
-			cout << "\nList is emty" << endl;
-		else
-		{
-			cout << "\nRecords in descending order pf roll number are:" << endl;
-			node* currentNode = start;
-			while (currentNode->next != NULL)
-				currentNode = currentNode->next;
-
-			while (currentNode != NULL)
-			{
-				cout << currentNode->noMhs << " " << currentNode->name << endl;
-				currentNode = currentNode->prev;
-			}
-		}
-	}
-    void searchData()
+void traverse()
 {
-    if (listEmpty() == true)
-    {
+    if (listEmpty())
         cout << "\nList is empty" << endl;
-    }
-    node* prev, * curr;
-    prev = curr = NULL;
-    cout << "\nEnter the roll number of the student whose record you want to search: ";
-    int num;
-    cin >> num;
-    if (search(num, &prev, &curr) == false)
-        cout << "\nRecord not found" << endl;
-        else
+    else
+    {
+        cout << "\nRecords in ascending order of roll number are: " << endl;
+        node *currentNode = start;
+        while (currentNode != NULL)
         {
-            cout << "\nRecord found" << endl;
-            cout << "\nRoll number: " << curr->noMhs << endl;
-            cout << "\nName: " << curr->name << endl;
+            cout << currentNode->noMhs << " " << currentNode->name << endl;
+            currentNode = currentNode->next;
         }
     }
-    int main()
+}
+void revtraverse()
+{
+    if (listEmpty())
+        cout << "\nList is emty" << endl;
+    else
     {
-        while (true)
+        cout << "\nRecords in descending order pf roll number are:" << endl;
+        node *currentNode = start;
+        while (currentNode->next != NULL)
+            currentNode = currentNode->next;
+
+        while (currentNode != NULL)
         {
-            try
+            cout << currentNode->noMhs << " " << currentNode->name << endl;
+            currentNode = currentNode->prev;
+        }
+    }
+}
+
+int main()
+{
+    while (true)
+    {
+        try
+        {
+            cout << "\nMenu" << endl;
+            cout << "1. Add ad record to the list" << endl;
+            cout << "2. Delete a record from the list" << endl;
+            cout << "3. view all records in the ascending order of roll numbers" << endl;
+            cout << "4. view all records in the descending order of roll numbers" << endl;
+            cout << "5. Search for a record in the list" << endl;
+            cout << "6. Exit" << endl;
+            cout << "\nEnter your choice (1-6):" << endl;
+            char ch;
+            cin >> ch;
+            switch (ch)
             {
-                cout << "\nMenu" << endl;
-                cout << "1. Add ad record to the list" << endl;
-                cout << "2. Delete a record from the list" << endl;
-                cout << "3. view all records in the ascending order of roll numbers" << endl;
-                cout << "4. view all records in the descending order of roll numbers" << endl;
-                cout << "5. Search for a record in the list" << endl;
-                cout << "6. Exit" << endl;
-                cout << "\nEnter your choice (1-6):" << endl;
-                char ch;
-                cin >> ch;
-                switch (ch)
-                {
-                case '1':
-                    addNode();
-                    break;
-                case '2':
-                    deleteNode();
-                    break;
-                case '3':
-                    traverse();
-                    break;
-                case '4':
-                    revtraverse();
-                    break;
-                case '5':
-                    searchData();
-                    break;
-                    case '6':
+            case '1':
+                addNode();
+                break;
+            case '2':
+                deleteNode();
+                break;
+            case '3':
+                traverse();
+                break;
+            case '4':
+                revtraverse();
+                break;
+            case '5':
+                searchData();
+                break;
+            case '6':
                 return 0;
             default:
                 cout << "\nInvalid option" << endl;
                 break;
             }
         }
-        catch (exception& e)
+        catch (exception &e)
         {
             cout << "Check for the values entered." << endl;
         }
-
     }
 }
