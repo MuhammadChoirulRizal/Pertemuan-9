@@ -9,3 +9,4 @@ struct node
     node *next;
     node *prev;
 };
+ node *start = NULL;
