@@ -16,4 +16,6 @@ struct node
     cin >> newnode->noMhs;
     cout << "\nEnter the name of the student :";
     cin >> newnode -> name;
+
+    // insert the new code in the list
  }
