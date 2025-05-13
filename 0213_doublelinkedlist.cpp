@@ -29,5 +29,9 @@ struct node
             return;
         }
         newnode ->next =start;
+        if(start != NULL)
+        {
+            start ->prev = newnode;
+        }
     }
  }
