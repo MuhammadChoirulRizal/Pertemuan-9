@@ -32,6 +32,7 @@ struct node
         if(start != NULL)
         {
             start ->prev = newnode;
+            newnode ->prev = NULL;
         }
     }
  }
