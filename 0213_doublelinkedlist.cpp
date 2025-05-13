@@ -35,5 +35,8 @@ struct node
             newnode ->prev = NULL;
             start = newnode;
         }
+        else {
+            
+        }
     }
  }
