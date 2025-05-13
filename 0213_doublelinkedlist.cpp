@@ -14,4 +14,6 @@ struct node
     node *newnode = new node();
     cout << "\nEnter the roll number of the student :";
     cin >> newnode->noMhs;
+    cout << "\nEnter the name of the student :";
+    cin >> newnode -> name;
  }
