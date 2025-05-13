@@ -40,7 +40,8 @@ struct node
             node *previous = NULL;
             while ( current != NULL && current -> noMhs< newnode-> noMhs)
             {
-              previous = current;  
+              previous = current; 
+              current = current -> next; 
             }
         }
     }
