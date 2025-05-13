@@ -38,6 +38,10 @@ struct node
         else {
             node *current = start;
             node *previous = NULL;
+            while ( current != NULL && current -> noMhs< newnode-> noMhs)
+            {
+                
+            }
         }
     }
  }
