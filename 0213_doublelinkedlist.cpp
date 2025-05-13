@@ -33,6 +33,7 @@ struct node
         {
             start ->prev = newnode;
             newnode ->prev = NULL;
+            start = newnode;
         }
     }
  }
