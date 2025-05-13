@@ -10,3 +10,6 @@ struct node
     node *prev;
 };
  node *start = NULL;
+ void addNode(){
+    
+ }
