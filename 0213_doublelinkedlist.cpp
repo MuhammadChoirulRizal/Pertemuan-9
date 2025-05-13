@@ -24,5 +24,10 @@ struct node
         // step 2 insert  the new node at the beginning 
         // kondisi jika star tidak kosong dan noMhs node baru sama dengan noMhs
         if (start != NULL && newnode -> noMhs == start ->noMhs)
+        {
+            cout << "\033[31mdumplicate roll number not allowed\033[0m"<< endl;
+            return;
+        }
+        newnode ->next =start;
     }
  }
