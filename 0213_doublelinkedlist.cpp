@@ -49,6 +49,9 @@ struct node
             if (current != NULL){
                 current -> prev = newnode;
             }
+            else{
+                start = newnode;
+            }
         }
     }
  }
