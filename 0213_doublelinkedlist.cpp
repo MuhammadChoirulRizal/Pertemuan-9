@@ -152,50 +152,24 @@ void revtraverse()
         }
     }
 }
-
-int main()
+// prosedure untuk mencari data dan menampilkan data yang dicari jika ada
+void searchData()
 {
-    while (true)
+    if (listEmpty() == true)
     {
-        try
-        {
-            cout << "\nMenu" << endl;
-            cout << "1. Add ad record to the list" << endl;
-            cout << "2. Delete a record from the list" << endl;
-            cout << "3. view all records in the ascending order of roll numbers" << endl;
-            cout << "4. view all records in the descending order of roll numbers" << endl;
-            cout << "5. Search for a record in the list" << endl;
-            cout << "6. Exit" << endl;
-            cout << "\nEnter your choice (1-6):" << endl;
-            char ch;
-            cin >> ch;
-            switch (ch)
-            {
-            case '1':
-                addNode();
-                break;
-            case '2':
-                deleteNode();
-                break;
-            case '3':
-                traverse();
-                break;
-            case '4':
-                revtraverse();
-                break;
-            case '5':
-                searchData();
-                break;
-            case '6':
-                return 0;
-            default:
-                cout << "\nInvalid option" << endl;
-                break;
-            }
-        }
-        catch (exception &e)
-        {
-            cout << "Check for the values entered." << endl;
-        }
+        cout << "\nList is empty" << endl;
+    }
+    node *prev, *curr;
+    prev = curr = NULL;
+    cout << "\nEnter the roll number of the student whose record you want to search: ";
+    int num;
+    cin >> num;
+    if (search(num, &prev, &curr) == false)
+        cout << "\nRecord not found" << endl;
+    else
+    {
+        cout << "\nRecord found" << endl;
+        cout << "\nRoll number: " << curr->noMhs << endl;
+        cout << "\nName: " << curr->name << endl;
     }
 }
