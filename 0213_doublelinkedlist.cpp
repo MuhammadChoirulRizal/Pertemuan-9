@@ -36,7 +36,7 @@ struct node
             start = newnode;
         }
         else {
-            
+            node *current = start;
         }
     }
  }
