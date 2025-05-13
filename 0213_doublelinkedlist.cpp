@@ -121,21 +121,7 @@ bool listEmpty()
 {
     return (start == NULL);
 }
-void traverse()
-{
-    if (listEmpty())
-        cout << "\nList is empty" << endl;
-        else
-        {
-            cout << "\nRecords in ascending order of roll number are: " << endl;
-            node* currentNode = start;
-            while (currentNode != NULL)
-            {
-                cout << currentNode->noMhs << " " << currentNode->name << endl;
-                currentNode = currentNode->next;
-            }
-        }
-    }
+
     void revtraverse()
 	{
 		if (listEmpty())
@@ -154,7 +140,26 @@ void traverse()
 			}
 		}
 	}
-    
+    void searchData()
+{
+    if (listEmpty() == true)
+    {
+        cout << "\nList is empty" << endl;
+    }
+    node* prev, * curr;
+    prev = curr = NULL;
+    cout << "\nEnter the roll number of the student whose record you want to search: ";
+    int num;
+    cin >> num;
+    if (search(num, &prev, &curr) == false)
+        cout << "\nRecord not found" << endl;
+        else
+        {
+            cout << "\nRecord found" << endl;
+            cout << "\nRoll number: " << curr->noMhs << endl;
+            cout << "\nName: " << curr->name << endl;
+        }
+    }
     int main()
     {
         while (true)
